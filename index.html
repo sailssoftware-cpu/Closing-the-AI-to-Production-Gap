@@ -286,7 +286,7 @@
   /* Section H2 — Poppins 600 ~49px */
   h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.8rem, 3.5vw, 3.0625rem);
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
     font-weight: 600;
     color: var(--sky);
     letter-spacing: -0.01em;
@@ -444,7 +444,7 @@
   .stat-item:hover { background: rgba(110,193,228,0.05); }
   .stat-num {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     font-weight: 500;
     color: var(--sky);
     line-height: 1;
@@ -1173,6 +1173,26 @@
   html, body { overflow-x: hidden; }
   img { max-width: 100%; height: auto; }
 
+
+  /* Safe area — notched phones (iPhone X+) */
+  @supports (padding: env(safe-area-inset-left)) {
+    .hero, .cta-section, .results-strip {
+      padding-left: max(5%, env(safe-area-inset-left));
+      padding-right: max(5%, env(safe-area-inset-right));
+    }
+    .container {
+      padding-left: max(5%, env(safe-area-inset-left));
+      padding-right: max(5%, env(safe-area-inset-right));
+    }
+  }
+  @media (max-width: 480px) {
+    @supports (padding: env(safe-area-inset-left)) {
+      .hero, .cta-section, .results-strip {
+        padding-left: max(4%, env(safe-area-inset-left));
+        padding-right: max(4%, env(safe-area-inset-right));
+      }
+    }
+  }
 </style>
 </head>
 <body>
@@ -1518,7 +1538,7 @@
 <section class="faq-section" aria-labelledby="faq-heading">
   <div class="container">
     <div class="section-label">Frequently Asked Questions</div>
-    <h2 id="faq-heading">Common Questions About Governed AI Delivery</h2>
+    <h2 id="faq-heading" style="font-size: 1.75rem; white-space: nowrap;">Common Questions About Governed AI Delivery</h2>
     <p>Answers to the questions enterprise technology leaders ask most when evaluating AI-assisted software delivery in regulated environments.</p>
 
     <div class="faq-list" role="list">
